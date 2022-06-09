@@ -15,6 +15,8 @@ class Octal
     decimal
   end
 
+  private
+  
   def valid_input?(number)
     number.chars.all? { |num| p num.match?(/[0-7]/)}
   end
