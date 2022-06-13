@@ -1,10 +1,9 @@
 class Clock
   include Comparable
-  attr_accessor :time, :hours, :minutes
+  
+  ONE_DAY = 24 * 60
 
   def initialize(hours, minutes)
-    @hours = hours
-    @minutes = minutes
     @time = (hours * 60) + minutes
   end
 
@@ -27,15 +26,21 @@ class Clock
   end
 
   def <=>(other_clock)
-    self.time <=> other_clock.time
+    time <=> other_clock.time
   end
 
-  def self.at(hours, minutes = 0)
-    self.new(hours, minutes)
+  def self.at(hours, minutes=0)
+    new(hours, minutes)
   end
+
+  protected
+
+  attr_accessor :time
+  
+  private
 
   def correct_time
-    self.time += 1440 while time < 0
-    self.time -= 1440 until time < 1440
+    self.time += ONE_DAY while time < 0
+    self.time -= ONE_DAY until time < ONE_DAY
   end
 end
