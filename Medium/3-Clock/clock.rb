@@ -41,6 +41,6 @@ class Clock
 
   def correct_time
     self.time += ONE_DAY while time < 0
-    self.time -= ONE_DAY until time < ONE_DAY
+    self.time -= ONE_DAY while time >= ONE_DAY
   end
 end
