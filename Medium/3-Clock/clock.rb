@@ -5,7 +5,7 @@ class Clock
   def initialize(hours, minutes)
     @hours = hours
     @minutes = minutes
-    self.time = (hours * 60) + minutes
+    @time = (hours * 60) + minutes
   end
 
   def to_s
