@@ -13,14 +13,14 @@ class Clock
     "#{hour}:#{minute}"
   end
 
-  def +(num)
-    self.time += num
+  def +(minutes)
+    self.time += minutes
     correct_time
     self
   end
 
-  def -(num)
-    self.time -= num
+  def -(minutes)
+    self.time -= minutes
     correct_time
     self
   end
